@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-
+import { useStopwatch, useTimer } from "react-timer-hook";
 function App() {
   const [words, setwords] = useState([
     "sigh",
@@ -24,80 +24,26 @@ function App() {
     "loving",
   ]);
   const [currentWord, setCurrentWord] = useState("");
-  const [timer, setTimer] = useState(30);
-  const time = useRef(30);
 
   const isTypingStarted = useRef(false);
   const score = useRef(0);
   const [gameOver, setGameOver] = useState(false);
-  // const gameOverRef = useRef(gameOver);
-
-  // useEffect(() => {
-  //   setGameOver(gameOverRef.current);
-  //   return () => {};
-  // }, [gameOverRef.current]);
+  const stopwatchOffset = new Date();
+  stopwatchOffset.setSeconds(stopwatchOffset.getSeconds() + 10);
+  const { seconds, minutes, hours, days, isRunning, start, pause, reset } =
+    useTimer({
+      autoStart: false,
+      expiryTimestamp: stopwatchOffset,
+      onExpire: () => {
+        setGameOver(true);
+      },
+    });
 
   useEffect(() => {
     const text = document.getElementById("text");
-
-    const settingsBtn = document.getElementById("settings-btn");
-    const settings = document.getElementById("settings");
-    const settingsForm = document.getElementById("settings-form");
-    const difficultySelect = document.getElementById("difficulty");
-
-    // List of words for game
-
-    // Init score
-
-    // Init time
-
-    // Set difficulty to value in ls or medium
-    let difficulty =
-      localStorage.getItem("difficulty") !== null
-        ? localStorage.getItem("difficulty")
-        : "medium";
-
-    // Set difficulty select value
-    difficultySelect.value =
-      localStorage.getItem("difficulty") !== null
-        ? localStorage.getItem("difficulty")
-        : "medium";
-
-    // Focus on text on start
     text.focus();
-
-    // Start counting down
-
     addWordToDOM();
-
-    // Event listeners
-
-    // Typing
-
-    // Settings btn click
-    settingsBtn.addEventListener("click", () =>
-      settings.classList.toggle("hide")
-    );
-
-    // Settings select
-    settingsForm.addEventListener("change", (e) => {
-      difficulty = e.target.value;
-      localStorage.setItem("difficulty", difficulty);
-    });
     return () => {};
-  }, []);
-
-  useEffect(() => {
-    console.log("rederring..");
-    setInterval(() => {
-      if (isTypingStarted.current) {
-        updateTime();
-      }
-    }, 1000);
-
-    return () => {
-      // isTypingStarted.current = false;
-    };
   }, []);
 
   // Generate random word from array
@@ -112,16 +58,6 @@ function App() {
     score.current++;
   }
 
-  // Update time
-  function updateTime() {
-    console.log(time.current, "fc");
-    if (time.current >= 0) {
-      time.current--;
-      setTimer(time.current);
-    } else {
-      setGameOver(true);
-    }
-  }
   function addWordToDOM() {
     setCurrentWord(getRandomWord());
   }
@@ -130,7 +66,11 @@ function App() {
       localStorage.getItem("difficulty") !== null
         ? localStorage.getItem("difficulty")
         : "medium";
-    isTypingStarted.current = true;
+
+    if (!isTypingStarted.current) {
+      start();
+      isTypingStarted.current = true;
+    }
     const insertedText = e.target.value;
 
     if (insertedText === currentWord) {
@@ -175,7 +115,7 @@ function App() {
               onChange={handleTextInput}
             />
             <p class="time-container">
-              Time left: <span id="time">{timer}s</span>
+              Time left: <span id="time">{seconds}s</span>
             </p>
             <p class="score-container">
               Score: <span id="score">{score.current}</span>
@@ -185,7 +125,13 @@ function App() {
           <div id="end-game-container" class="end-game-container">
             <h1>Time ran out</h1>
             <p>Your final score is {score.current}</p>
-            <button onclick="location.reload()">Reload</button>
+            <button
+              onClick={() => {
+                window.location.reload();
+              }}
+            >
+              Reload
+            </button>
           </div>
         )}
       </div>
