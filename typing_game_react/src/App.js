@@ -1,49 +1,55 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 
 function App() {
+  const [words, setwords] = useState([
+    "sigh",
+    "tense",
+    "airplane",
+    "ball",
+    "pies",
+    "juice",
+    "warlike",
+    "bad",
+    "north",
+    "dependent",
+    "steer",
+    "silver",
+    "highfalutin",
+    "superficial",
+    "quince",
+    "eight",
+    "feeble",
+    "admit",
+    "drag",
+    "loving",
+  ]);
+  const [currentWord, setCurrentWord] = useState("");
+  const [timer, setTimer] = useState(30);
+  const time = useRef(30);
+
+  const isTypingStarted = useRef(false);
+  const score = useRef(0);
+  const [gameOver, setGameOver] = useState(false);
+  // const gameOverRef = useRef(gameOver);
+
+  // useEffect(() => {
+  //   setGameOver(gameOverRef.current);
+  //   return () => {};
+  // }, [gameOverRef.current]);
+
   useEffect(() => {
-    const word = document.getElementById("word");
     const text = document.getElementById("text");
-    const scoreEl = document.getElementById("score");
-    const timeEl = document.getElementById("time");
-    const endgameEl = document.getElementById("end-game-container");
+
     const settingsBtn = document.getElementById("settings-btn");
     const settings = document.getElementById("settings");
     const settingsForm = document.getElementById("settings-form");
     const difficultySelect = document.getElementById("difficulty");
 
     // List of words for game
-    const words = [
-      "sigh",
-      "tense",
-      "airplane",
-      "ball",
-      "pies",
-      "juice",
-      "warlike",
-      "bad",
-      "north",
-      "dependent",
-      "steer",
-      "silver",
-      "highfalutin",
-      "superficial",
-      "quince",
-      "eight",
-      "feeble",
-      "admit",
-      "drag",
-      "loving",
-    ];
-
-    // Init word
-    let randomWord;
 
     // Init score
-    let score = 0;
 
     // Init time
-    let time = 10;
 
     // Set difficulty to value in ls or medium
     let difficulty =
@@ -61,74 +67,12 @@ function App() {
     text.focus();
 
     // Start counting down
-    const timeInterval = setInterval(updateTime, 1000);
-
-    // Generate random word from array
-    function getRandomWord() {
-      return words[Math.floor(Math.random() * words.length)];
-    }
-
-    // Add word to DOM
-    function addWordToDOM() {
-      randomWord = getRandomWord();
-      word.innerHTML = randomWord;
-    }
-
-    // Update score
-    function updateScore() {
-      score++;
-      scoreEl.innerHTML = score;
-    }
-
-    // Update time
-    function updateTime() {
-      time--;
-      timeEl.innerHTML = time + "s";
-
-      if (time === 0) {
-        clearInterval(timeInterval);
-        // end game
-        gameOver();
-      }
-    }
-
-    // Game over, show end screen
-    function gameOver() {
-      endgameEl.innerHTML = `
-        <h1>Time ran out</h1>
-        <p>Your final score is ${score}</p>
-        <button onclick="location.reload()">Reload</button>
-      `;
-
-      endgameEl.style.display = "flex";
-    }
 
     addWordToDOM();
 
     // Event listeners
 
     // Typing
-    text.addEventListener("input", (e) => {
-      const insertedText = e.target.value;
-
-      if (insertedText === randomWord) {
-        addWordToDOM();
-        updateScore();
-
-        // Clear
-        e.target.value = "";
-
-        if (difficulty === "hard") {
-          time += 2;
-        } else if (difficulty === "medium") {
-          time += 3;
-        } else {
-          time += 5;
-        }
-
-        updateTime();
-      }
-    });
 
     // Settings btn click
     settingsBtn.addEventListener("click", () =>
@@ -143,6 +87,60 @@ function App() {
     return () => {};
   }, []);
 
+  useEffect(() => {
+    console.log("rederring..");
+    setInterval(() => {
+      if (isTypingStarted.current) {
+        updateTime();
+      }
+    }, 1000);
+
+    return () => {
+      // isTypingStarted.current = false;
+    };
+  }, []);
+
+  // Generate random word from array
+  function getRandomWord() {
+    return words[Math.floor(Math.random() * words.length)];
+  }
+
+  // Add word to DOM
+
+  // Update score
+  function updateScore() {
+    score.current++;
+  }
+
+  // Update time
+  function updateTime() {
+    console.log(time.current, "fc");
+    if (time.current >= 0) {
+      time.current--;
+      setTimer(time.current);
+    } else {
+      setGameOver(true);
+    }
+  }
+  function addWordToDOM() {
+    setCurrentWord(getRandomWord());
+  }
+  const handleTextInput = (e) => {
+    let difficulty =
+      localStorage.getItem("difficulty") !== null
+        ? localStorage.getItem("difficulty")
+        : "medium";
+    isTypingStarted.current = true;
+    const insertedText = e.target.value;
+
+    if (insertedText === currentWord) {
+      console.log(insertedText, currentWord);
+      addWordToDOM();
+      updateScore();
+
+      e.target.value = "";
+    }
+  };
   return (
     <>
       <button id="settings-btn" class="settings-btn">
@@ -162,28 +160,34 @@ function App() {
       </div>
 
       <div class="container">
-        <h2>👩‍💻 Speed Typer 👨‍💻</h2>
-        <small>Type the following:</small>
-
-        <h1 id="word"></h1>
-
-        <input
-          type="text"
-          id="text"
-          autocomplete="off"
-          placeholder="Type the word here..."
-          autofocus
-        />
-
-        <p class="time-container">
-          Time left: <span id="time">10s</span>
-        </p>
-
-        <p class="score-container">
-          Score: <span id="score">0</span>
-        </p>
-
-        <div id="end-game-container" class="end-game-container"></div>
+        {!gameOver ? (
+          <>
+            {" "}
+            <h2>👩‍💻 Speed Typer 👨‍💻</h2>
+            <small>Type the following:</small>
+            <h1 id="word">{currentWord}</h1>
+            <input
+              type="text"
+              id="text"
+              autocomplete="off"
+              placeholder="Type the word here..."
+              autofocus
+              onChange={handleTextInput}
+            />
+            <p class="time-container">
+              Time left: <span id="time">{timer}s</span>
+            </p>
+            <p class="score-container">
+              Score: <span id="score">{score.current}</span>
+            </p>
+          </>
+        ) : (
+          <div id="end-game-container" class="end-game-container">
+            <h1>Time ran out</h1>
+            <p>Your final score is {score.current}</p>
+            <button onclick="location.reload()">Reload</button>
+          </div>
+        )}
       </div>
     </>
   );
