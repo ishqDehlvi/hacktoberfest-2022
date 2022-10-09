@@ -104,7 +104,6 @@ input {
 
 .end-game-container {
   background-color: inherit;
-  display: none;
   align-items: center;
   justify-content: center;
   flex-direction: column;
