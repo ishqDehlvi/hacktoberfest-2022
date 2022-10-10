@@ -1,0 +1,83 @@
+body{
+	background: linear-gradient(-45deg, #da8e76, #e24581cd, #3cb4e0e3, #0cefbae8);
+	font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+	color: white;
+	background-size: 400% 400%;
+	animation: gradient 7s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient{
+	0%{
+		background-position: 0% 50%;
+	}
+	50%{
+		background-position: 100% 50%;
+	}
+	100%{
+		background-position: 0% 50%;
+	}
+}
+
+.container, .container-2, .container-3{
+    border: 3px solid black;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.flex-box-container, .flex-box-container-2{
+    display: flex;
+    border: 1px solid black;
+    padding:10px;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+ }
+
+.flex-box-container div{
+    padding: 10px;
+    border: 1px solid black;
+    align-items: center;
+}
+
+.btn-primary{
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(56, 56, 228);
+    margin: 10px;
+    padding: 15px;
+}
+
+:hover.btn-primary{
+    box-shadow: 3px 3px rgb(180, 176, 176);
+    background-color: rgb(45, 45, 153);
+
+}
+
+.btn-danger{
+    border: 1px solid white;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(252, 6, 6);
+    margin: 10px;
+    padding: 15px;
+}
+
+:hover.btn-danger{
+    box-shadow: 3px 3px rgb(180, 176, 176);
+    background-color: rgb(168, 9, 3);
+
+}
+.flex-box-container-2 img{
+     border: 1px solid green;
+     margin: 10px;
+     box-shadow: 5px 5px 10px rgb(153, 138, 138);
+     height: 100px;
+     width: 100px;
+
+}
+.flex-box-rps img:hover{
+    box-shadow: 5px 10px 30px rgb(206, 64, 206);
+    
+}
