@@ -5,199 +5,167 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio | Responsive Website Design</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css"
-        integrity="sha384-wESLQ85D6gbsF459vf1CiZ2+rr+CsxRY0RpiF1tLlQpDnAgg6rwdsUF1+Ics2bni" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+    <title>Fitness Hub</title>
+    <style>
+        body {
+            font-family: 'Balsamiq Sans', cursive;
+            margin: 0px;
+            padding: 0px;
+            background-image: url(img/rbg.jpg);
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .left {
+            font-family: 'Balsamiq Sans', cursive;
+            border-radius: 15px;
+            display: inline-block;
+            position: absolute;
+            left: 34px;
+            top: 19px;
+            background-color: rgb(0 0 0 / 75%);
+        }
+
+        .left img {
+            width: 115px;
+            border-radius: 38px;
+        }
+
+        .left div {
+            text-align: center;
+        }
+
+        .mid {
+            border: 2px solid black;
+            display: block;
+            width: 46%;
+            margin: 18px 355px;
+            background-color: rgb(0 0 0 / 75%);
+            border-radius: 30px;
+        }
+
+        .right {
+            border: 2px solid yellow;
+            display: inline-block;
+            position: absolute;
+            right: 34px;
+            top: 38px;
+        }
+
+        .navbar {
+            display: inline-block;
+
+        }
+
+        .navbar li {
+            display: inline-block;
+            font-size: 22px;
+        }
+
+        .navbar li a {
+            color: white;
+            text-decoration: none;
+            padding: 34px 23px;
+        }
+
+        .navbar li a:hover {
+            color: grey;
+        }
+
+        .btn {
+            margin: 0px 9px;
+            background-color: rgb(0 0 0 / 75%);
+            color: white;
+            padding: 2px 11px;
+            border: 2px solid grey;
+            border-radius: 15px;
+            font-size: 18px;
+            cursor: pointer;
+            font-family: 'Balsamiq Sans', cursive;
+        }
+
+        .btn:hover {
+            background-color: grey;
+        }
+
+        .container {
+            border: 2px solid white;
+            margin: 106px 150px;
+            padding: 75px;
+            width: 35%;
+            border-radius: 11px;
+            background-color: rgb(0 0 0 / 75%);
+        }
+
+        .form-grp input {
+            text-align: center;
+            display: block;
+            width: 508px;
+            padding: 1px;
+            border: 2px solid black;
+            padding: 6px;
+            margin: 10px auto;
+            font-size: 25px;
+            border-radius: 8px;
+            font-family: 'Balsamiq Sans', cursive;
+        }
+
+        .container h1 {
+            text-align: center;
+        }
+
+        .container btn {
+            display: block;
+            width: 24px;
+            margin: auto;
+        }
+    </style>
 </head>
 
 <body>
-    <header>
-        <a href="#" class="logo">Portfolio</a>
-        <div class="toggle" onclick="toggleMenu();"></div>
-        <ul class="menu">
-            <li><a href="#home" onclick="toggleMenu();">Home</a></li>
-            <li><a href="#about" onclick="toggleMenu();">About</a></li>
-            <li><a href="#services" onclick="toggleMenu();">Services</a></li>
-            <li><a href="#work" onclick="toggleMenu();">Work</a></li>
-            <li><a href="#testimonials" onclick="toggleMenu();">Testimonials</a></li>
-            <li><a href="#contact" onclick="toggleMenu();">Contact</a></li>
-        </ul>
+    <header class="header">
+        <!-- Left box for logo -->
+        <div class="left">
+            <img src="img/logo.png" alt="">
+            <div>FITNESS HUB</div>
+        </div>
+
+        <!-- Mid box for nevbar -->
+        <div class="mid">
+            <ul class="navbar">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Fitness Calculator</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+
+        <!-- Right box for buttons -->
+        <div class="right">
+            <button class="btn">Call Us Now</button>
+            <button class="btn">Email Us</button>
+        </div>
     </header>
-    <section class="banner" id="home">
-        <dev class="textBx">
-            <h2>Hello, I'm <br><span>Arpit Kumar Singh</span></h2>
-            <h3>I'm a Tech Enthusiast</h3>
-            <a href="#about" class="btn">About Me</a>
-        </dev>
-    </section>
-
-    <section class="about" id="about">
-        <div class="heading">
-            <h2>About Me</h2>
-        </div>
-        <div class="content">
-            <div class="contentBx w50">
-                <h3>I'm a Web Developer</h3>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa possimus vitae facere maxime, commodi
-                    minima, delectus et quibusdam dolorem amet incidunt vel modi. Ad obcaecati accusantium eum explicabo
-                    culpa architecto recusandae inventore.
-                    Sequi tenetur iste, sit fugiat quod aliquid nobis! Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit. Nihil quod animi, corporis assumenda eveniet vel quo adipisci, ipsum unde soluta
-                    atque provident dolor exercitationem sunt
-                    quasi? Ipsa magni repellendus quis pariatur nulla aut rerum, voluptatem, blanditiis, totam debitis
-                    labore quibusdam. <br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis,
-                    incidunt? Dolores laborum neque quis
-                    quod nobis aliquam, distinctio architecto est perspiciatis nostrum debitis! Architecto perspiciatis
-                    blanditiis illum voluptatum libero ipsum, quisquam necessitatibus quae dignissimos neque nostrum.
-                    Ducimus laboriosam nostrum suscipit?</p>
+    <div class="container">
+        <h1>Join Now</h1>
+        <form action="noaction.php">
+            <div class="form-grp">
+                <input type="text" name="" placeholder="Enter Your Name">
             </div>
-            <div class="w50">
-                <img src="/My Portfolio (wd)/images/img1.jpg" class="img">
+            <div class="form-grp">
+                <input type="text" name="" placeholder="Age">
             </div>
-        </div>
-    </section>
-
-    <section class="services" id="services">
-        <div class="heading">
-            <h2 class="white">Our Services</h2>
-            <p class="white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut, deserunt.</p>
-        </div>
-        <dev class="content">
-            <dev class="servicesBx">
-                <img src="/My Portfolio (wd)/images/icon1.png">
-                <h2>Web Design</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni, corrupti dolores. Officiis hic ad
-                    aliquid doloribus excepturi amet deleniti corporis!</p>
-            </dev>
-            <dev class="servicesBx">
-                <img src="/My Portfolio (wd)/images/icon2.png">
-                <h2>Web Development</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni, corrupti dolores. Officiis hic ad
-                    aliquid doloribus excepturi amet deleniti corporis!</p>
-            </dev>
-            <dev class="servicesBx">
-                <img src="/My Portfolio (wd)/images/icon3.png">
-                <h2>Content Writing</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni, corrupti dolores. Officiis hic ad
-                    aliquid doloribus excepturi amet deleniti corporis!</p>
-            </dev>
-            <dev class="servicesBx">
-                <img src="/My Portfolio (wd)/images/icon4.png">
-                <h2>Photo Editing</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni, corrupti dolores. Officiis hic ad
-                    aliquid doloribus excepturi amet deleniti corporis!</p>
-            </dev>
-        </dev>
-    </section>
-
-    <section class="work" id="work">
-        <div class="heading">
-            <h2>Our Latest Work</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut, deserunt.</p>
-        </div>
-        <div class="content">
-            <div class="workBx">
-                <img src="/My Portfolio (wd)/images/product1.jpg" alt="">
+            <div class="form-grp">
+                <input type="text" name="" placeholder="Email Address">
             </div>
-            <div class="workBx">
-                <img src="/My Portfolio (wd)/images/product2.jpg" alt="">
+            <div class="form-grp">
+                <input type="text" name="" placeholder="Phone No.">
             </div>
-            <div class="workBx">
-                <img src="/My Portfolio (wd)/images/product3.jpg" alt="">
-            </div>
-            <div class="workBx">
-                <img src="/My Portfolio (wd)/images/product4.jpg" alt="">
-            </div>
-        </div>
-        <div class="heading">
-            <a href="#" class="btn">View More</a>
-        </div>
-    </section>
-
-    <section class="testimonial" id="testimonials">
-        <div class="heading">
-            <h2>Testimonial</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut, deserunt.</p>
-        </div>
-        <div class="content">
-            <div class="testimonialBx">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At neque modi eaque veniam labore officia
-                    expedita illum, a maxime quos animi doloribus saepe soluta omnis. Voluptatem, ipsum vitae, beatae
-                    minus suscipit perspiciatis expedita autem
-                    ratione ut maxime, possimus dolor officiis. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nulla, blanditiis?</p>
-                <h3>Someone Famous<br><span>Creative Designer</span></h3>
-            </div>
-            <div class="testimonialBx">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At neque modi eaque veniam labore officia
-                    expedita illum, a maxime quos animi doloribus saepe soluta omnis. Voluptatem, ipsum vitae, beatae
-                    minus suscipit perspiciatis expedita autem
-                    ratione ut maxime, possimus dolor officiis. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nulla, blanditiis?</p>
-                <h3>Someone Famous<br><span>Creative Designer</span></h3>
-            </div>
-        </div>
-    </section>
-
-    <section class="contact" id="contact">
-        <div class="heading">
-            <h2 class="white">Contact US</h2>
-            <p class="white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut, deserunt.</p>
-        </div>
-        <div class="content">
-            <div class="contactInfo">
-                <h3>Contact Info</h3>
-                <div class="contactInfoBx">
-                    <div class="box">
-                        <div class="text">
-                            <h3>Address</h3>
-                            <p>H. No. 145/3,<br>Vayusenavihar, New Delhi,<br>110044</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="text">
-                            <h3>Phone</h3>
-                            <p>8847xxxxx3</p>
-                        </div>
-                    </div>
-                    <div class="box">
-                        <div class="text">
-                            <h3>Email</h3>
-                            <p>singharpit302@gmail.com</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="formBx">
-                <form>
-                    <h3>Message Me</h3>
-                    <input type="text" name="" placeholder="Full Name">
-                    <input type="text" name="" placeholder="Email">
-                    <textarea placeholder="Your Message"></textarea>
-                    <input type="submit" value="Send">
-                </form>
-            </div>
-        </div>
-    </section>
-    <div class="copyright">
-        <p>Copyright &#169 2021 My X-Portfolio. All rights reserved</p>
+            <button class="btn">SUBMIT</button>
+        </form>
     </div>
-    <script type="text/javascript">
-        window.addEventListener('scroll', function () {
-            var header = document.querySelector('header');
-            header.classList.toggle('sticky', window.scrollY > 0);
-
-        });
-
-        function toggleMenu() {
-            var menuToggle = document.querySelector('.toggle');
-            var menu = document.querySelector('.menu');
-            menuToggle.classList.toggle('active');
-            menu.classList.toggle('active');
-        }
-    </script>
 </body>
 
 </html>
