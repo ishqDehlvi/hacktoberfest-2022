@@ -1,0 +1,160 @@
+.content{
+    color: #3391ea;
+    font-size: 40px;
+}
+body{
+    background-color: #f2c532;
+}
+.animate-charcter
+{
+    margin-left: 370px;
+    text-align: center;
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  /* text-fill-color: transparent; */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+      font-size: 150px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 100% center;
+  }
+}
+button{
+
+    box-shadow: inset 0 0 0 0 #000000;
+    color: #6cd26c;
+    margin: 0 -.25rem;
+    padding: 0 .25rem;
+    transition: color .5s ease-in-out, box-shadow .5s ease-in-out;
+
+}
+button:hover {
+  box-shadow: inset 150px 0 0 0 #68d654;
+  color: white;
+}
+
+
+.button {
+  margin-top: 50px;
+  margin-right: 100px;
+  margin-left: 280px;
+  text-align: center;
+    border-radius: 15px;
+    position: relative;
+    background-color: #000000;
+    border: none;
+    font-size: 22px;
+    color: #FFFFFF;
+    padding: 15px;
+    width: 150px;
+
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  .button:after {
+    content: "";
+    background:  #f2c532;
+    display: flex;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+  }
+  .image{
+    background-color: #f2c532;
+  }
+  .button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+  }
+h3{
+  margin-top: 150px;
+  font-size: 30px;
+}
+h2 , h3 , p {
+    color: #ffffff;
+    text-align: center;
+}
+.flex-childmagenta{
+text-align :center;
+}
+.flex-container {
+  border-radius: 15px;
+    display: flex;
+}
+
+.flex-child {
+    flex: 1;
+    border-radius: 15px;
+    border: 5px solid rgb(7, 7, 7);
+}  
+
+.flex-child:first-child {
+    margin-right: 20px;
+}   
+.contain {
+  display: flex;
+  position: relative;
+  width: 80%;
+}
+
+.image {
+  display:flex;
+  width: 125%;
+  height: 100%;
+  border-radius: 20px;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border-radius: 15px;
+  right: 0;
+  background-color: #f2c532;
+  overflow: hidden;
+  width: 0;
+  height: 100%;
+  transition: .5s ease;
+}
+
+.contain:hover .overlay {
+  width: 125%;
+}
+
+.text {
+  color:  #fadc6e;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+}
