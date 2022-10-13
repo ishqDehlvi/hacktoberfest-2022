@@ -1,9 +1,258 @@
 <!DOCTYPE html>
-<html>
-<body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sparks</title>
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
+    <!-- google fonts cdn link  -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   
+<!-- header section starts  -->
+
+<header>
+
+    <div id="menu" class="fas fa-bars"></div>
+
+    <!--<a href="#" class="logo"><i class="fas fa-user-graduate"></i>LOGO</a> -->
+    <a href="#" class="logo">
+        <img src="icons/first.png" alt="">
+    </a>
+
+    <nav class="navbar">
+        <ul>
+            <li><a class="active" href="#home">home</a></li>
+            <li><a href="#about">about</a></li>
+            <li><a href="#course">courses</li>
+            <li><a href="#motive">motive</a></li>
+            <li><a href="#services">services</a></li>
+            <li><a href="components/contact.html">contact</a></li>
+        </ul>
+    </nav>
+
+    <div id="login" class="fas fa-user-circle"></div>
+</header>
+
+<!-- header section ends -->
+
+<!-- login form  -->
+
+<div class="login-form">
+
+    <form action="">
+        <h3>login</h3>
+        <input type="email" placeholder="username" class="box">
+        <input type="password" placeholder="password" class="box">
+        <p>forget password? <a href="#">click here</a></p>
+        <p>don't have an account? <a href="#">register now</a></p>
+        <input type="submit" class="btn" value="login">
+        <i class="fas fa-times"></i>
+    </form>
+
+</div>
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <h1>education from home</h1>
+    <p>Sparks offers text-based instruction,links and videos. They have an embedded coding widget that makes it possible to learn complex theories,
+         best practices, and fun activities all on your browser.</p>
+    <a href="#"><button class="btn">get started</button></a>
+
+    <div class="shape"></div>
+
+</section>
+
+<!-- home section ends -->
+
+<!-- about section starts  -->
+
+<section class="about" id="about">
+
+    <div class="image">
+        <img src="images/img1.jpg" alt="">
+    </div>
+
+    <div class="content">
+        <h3>why choose us?</h3>
+        <p>we are here to provide  you different  resources (in the form of notes , videos and links)
+            that helps you in our career growth. 
+            A most important features in our website is that you will get all the resources here.
+        </p>
+        <p>Our digital resources, tools, and learning materials are developed by educational experts to incorporate
+            leading pedagogical practices</p>
+        <a href="components/about.html"><button class="btn">learn more</button></a>
+    </div>
+
+</section>
+
+<!-- about section ends -->
+
+<!-- course section starts  -->
+
+<section class="course" id="course">
+
+<h1 class="heading">our courses section</h1>    
+
+<div class="box-container">
+
+    <div class="box">
+        <img src="images/img2.jpg" alt="">
+        <h3 class="price">Free</h3>
+        <div class="content">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half"></i>
+            </div>
+            <a href="./pages/notes/index.html" class="title">notes and pdf</a>
+            <p>contents provided here in the format of notes and pdf</p>
+            <div class="info">
+                <h3> <i class="fas fa-book"></i>toal 12 course</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="box">
+        <img src="images/bg.jpg" alt="">
+        <h3 class="price">free</h3>
+        <div class="content">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half"></i>
+            </div>
+            <a href="./pages/video/index1.html" class="title">videos and links</a>
+            <p>contents provided here in the videos and links</p>
+            <div class="info">
+                 <h3> <i class="fas fa-book"></i> total 12 course</h3>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</section>
+
+<!-- course section ends -->
+
+<!-- motive section starts  -->
+
+<section class="motive" id="motive">
+
+<h1 class="heading">Motive Of Our Community</h1>
+<img src="images/motive.png" alt="">
+
+<p>Spark is working for the welfare of the student community,
+     and our goal is to spread a healthy and convenient method of 
+     stress-free learning. Working in groups and interacting with 
+     fellow learners will help the mental health as well as skill
+      level of beginners of today’s generation....</p>
+
+<a href="components/motive.html"><button class="btn">learn more</button></a>
+
+</section>
+ 
+                
+<!-- motive section ends -->
+<!--service section starts-->
+<section class="services" id="services">
+<h1 class="services">we provide various services</h1>
+<p>we have services for you to help you find room in any city and get assignment 
+    in one click or in one day, so connect with our services and make your life better in these fields.
+    I hope you will not disappointed with our services ,lets go and check out the services.
+</p>
+<a href="components/services.html"> <button class="btn">services</button></a>
+</section>
+<!--sevice section ends-->
+<!-- contact section starts  -->
+
+<section class="contact" id="contact">
+<h1 class="heading">contact us</h1>
+<div class="row">
+
+    <form action="">
+        <input type="text" placeholder="full name" class="box">
+        <input type="email" placeholder="your email" class="box">
+        <input type="number" placeholder="your number" class="box">
+        <textarea name="" id="" cols="30" rows="10" class="box address" placeholder="your query"></textarea>
+        <input type="submit" class="btn" value="send now">
+    </form>
+
+    <div class="image">
+        <img src="images/contact-img.png" alt="">
+    </div>
+
+</div>
+
+</section>
+
+<!-- contact section ends -->
+
+<!-- footer section starts  -->
+
+<div class="footer">
+
+    <div class="box-container">
+
+        <div class="box">
+            <h3>branch locations</h3>
+            <a href="#">India</a>
+        </div>
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a class="active" href="#home">home</a>
+           <a href="#about">about</a>
+            <a href="#course">courses</a>
+            <a href="#motive">motive</a>
+            <a href="#services">services</a>
+            <a href="components/contact.html">contact</a>
+            <!-- <a href="#">home</a> -->
+            <!-- <a href="#">about</a> -->
+            <!-- <a href="#">course</a> -->
+            <!-- <a href="#">motive</a> -->
+             <!-- <a href="#">services</a> -->
+            <!-- <a href="#">contact</a> -->
+        </div>
+
+        <div class="box">
+            <h3>contact info</h3>
+            <p> <i class="fas fa-map-marker-alt"></i> delhi, india 110030. </p>
+            <p> <i class="fas fa-envelope"></i> shivanshushukla2022@gmail.com </p>
+            <p> <i class="fas fa-phone"></i> +91 9560137315 </p>
+        </div>
+
+    </div>
+
+    <h1 class="credit">created by <a href="#">spark</a> all rights reserved. </h1>
+
+</div>
+
+<!-- footer section ends -->
+
+
+<!-- jquery cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+<script src="js2/script.js"></script>
+<script src="js2/swiper-bundle.min.js"></script>
 
 </body>
 </html>
