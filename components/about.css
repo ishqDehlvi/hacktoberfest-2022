@@ -1,5 +1,4 @@
 body {
-    font-family: 'Courier New', Courier, monospace;
     margin: 0;
 }
 
@@ -12,22 +11,13 @@ html {
 *:after {
     box-sizing: inherit;
 }
-h1{
 
+h1 {
     font-size: 45px;
 }
-.our{
-    font-size: 40px;
-}
-.column1 {
-    border-radius: 15px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 15px;
-    width: 40%;
-    padding:  0 30px;
 
+.our {
+    font-size: 40px;
 }
 
 .column {
@@ -37,7 +27,8 @@ h1{
     margin-bottom: 16px;
     padding: 0 40px;
 }
-.img{
+
+.img {
     border-radius: 25px;
 }
 
@@ -47,11 +38,11 @@ h1{
 }
 
 .about-section {
-    font-size: 25px;
+    font-size: 30px;
     padding: 50px;
     text-align: center;
-    background-color: #474e5d;
-    color: white;
+    background-image: linear-gradient(to right, rgb(255, 123, 0), rgb(255, 255, 0));
+    color: green;
 }
 
 .container {
@@ -65,9 +56,11 @@ h1{
     clear: both;
     display: table;
 }
-.card{
-border-radius: 15px;
+
+.card {
+    border-radius: 15px;
 }
+
 .title {
     color: grey;
 }
@@ -79,14 +72,9 @@ border-radius: 15px;
     display: inline-block;
     padding: 8px;
     color: white;
-    background-color: #000;
     text-align: center;
     cursor: pointer;
     width: 100%;
-}
-
-.button:hover {
-    background-color: #555;
 }
 
 @media screen and (max-width: 650px) {
